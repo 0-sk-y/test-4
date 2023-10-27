@@ -1,0 +1,135 @@
+/*
+████████╗███████╗███████╗████████╗   ██╗  ██╗
+╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝   ██║  ██║
+   ██║   █████╗  ███████╗   ██║█████╗███████║
+   ██║   ██╔══╝  ╚════██║   ██║╚════╝╚════██║
+   ██║   ███████╗███████║   ██║           ██║
+   ╚═╝   ╚══════╝╚══════╝   ╚═╝           ╚═╝
+*/
+
+/*? ➞➞➞➞➞ Basic reset ➞➞➞➞➞ */
+
+/* (⌐■_■) This code will reset the basic styles of the web page, such as margins, padding and fonts, 
+   and will set some default values for elements. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #337ab5;
+}
+
+/*? ➞➞➞➞ Layout ➞➞➞➞➞ */
+
+/*
+┌────────────────────────────────────────────────────┐
+│                      header                        │
+└────────────────────────────────────────────────────┘
+┌───────┐ ┌────────────────┬───────────────┐ ┌───────┐
+│       │ │                │               │ │       │
+│       │ │       c-1      │      c-2      │ │       │
+│   L   │ ├────────────────┼───────────────┤ │   R   │
+│       │ │                │               │ │       │
+│       │ │       c-3      │      c-4      │ │       │
+└───────┘ └────────────────┴───────────────┘ └───────┘
+┌────────────────────────────────────────────────────┐
+│                      footer                        │
+└────────────────────────────────────────────────────┘
+*/
+
+.gc {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% repeat(2, 1fr) 20%;
+  grid-template-rows: 15% repeat(2, 1fr) 15%;
+  grid-template-areas: 
+  "header header header header"
+  "left c-1 c-2 right"
+  "left c-3 c-4 right"
+  "footer footer footer footer";
+}
+
+.header {grid-area: header;}
+.left {grid-area: left;}
+.c-1 {grid-area: c-1;}
+.c-2 {grid-area: c-2;}
+.c-3 {grid-area: c-3;}
+.c-4 {grid-area: c-4;}
+.right {grid-area: right;}
+.footer {grid-area: footer;}
+
+.header,
+.left,
+.c-1,
+.c-2,
+.c-3,
+.c-4,
+.right,
+.footer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(200,200,200);
+}
+
