@@ -183,6 +183,60 @@ button:hover {
 
 .header {
   background-image: var(--gradient-1);
+  border: 1px solid var(--c-3);
+}
+
+.header .int:nth-child(1) {
+  left: 50%;
+  background-image: var(--gradient-1-inv);
+  transform: translate(-50%, 0);
+  width: 80%;
+  border-radius: 0 0 3rem 3rem;
+  outline: 1px solid var(--c-4);
+}
+
+.header .int:nth-child(2) {
+  width: 10%;
+  background-image: var(--gradient-1-inv);
+  bottom: 0;
+  border-radius: 0 3rem 0 0;
+}
+
+.header .int:nth-child(3) {
+  width: 10%;
+  right: 0;
+  background-image: var(--gradient-1-inv);
+  bottom: 0;
+  border-radius:3rem 0 0 0;
+}
+
+.header .int:nth-child(4) {
+  width: 70%;
+  height: 25%;
+  background-image: var(--gradient-1-inv);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 2rem 2rem 0 0;
+}
+
+.header .int:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1);
+  border-radius: 3rem;
+}
+
+.header .int:nth-child(6) {
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  height:80%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1-inv);
+  border-radius: 3rem;
 }
 
 /*
@@ -253,4 +307,61 @@ button:hover {
 
 .footer {
   background-image: var(--gradient-1-inv);
+  border: 1px solid var(--c-3);
+}
+
+.footer .int:nth-child(1) {
+  left: 50%;
+  background-image: var(--gradient-1-inv);
+  transform: translate(-50%, 0);
+  width: 80%;
+  border-radius: 3rem 3rem 0 0;
+  outline: 1px solid var(--c-4);
+  bottom: 0;
+}
+
+.footer .int:nth-child(2) {
+  width: 10%;
+  background-image: var(--gradient-1);
+  bottom: 0;
+  border-radius: 0 0 3rem 0;
+  top: 0;
+}
+
+.footer .int:nth-child(3) {
+  width: 10%;
+  right: 0;
+  background-image: var(--gradient-1);
+  bottom: 0;
+  border-radius:0 0 0 3rem;
+  top: 0;
+}
+
+.footer .int:nth-child(4) {
+  width: 70%;
+  height: 25%;
+  background-image: var(--gradient-1);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 0 0 2rem 2rem;
+}
+
+.footer .int:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1);
+  border-radius: 3rem;
+}
+
+.footer .int:nth-child(6) {
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  height:80%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1-inv);
+  border-radius: 3rem;
 }
