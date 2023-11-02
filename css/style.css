@@ -17,6 +17,9 @@
   --c-3: #9FC131;
   --c-4: #DBF227;
   --c-5: #D6D58E;
+
+  --c-6: #245247;
+  --c-7: #47a87b;
   
   /**   -> gray colors <-   */
   
@@ -34,8 +37,16 @@
   /**   -> Gradients <-   */
 
   --gradient-1: linear-gradient(0deg, rgba(0,36,0,1) 0%, rgba(54,121,9,1) 50%, rgba(219,255,0,1) 100%);
+  --gradient-1-50: linear-gradient(0deg, rgba(0,36,0,.5) 0%, rgba(54,121,9,.5) 50%, rgba(219,255,0,.5) 100%);
   --gradient-1-inv: linear-gradient(0deg, rgba(219,255,0,1) 0%, rgba(54,121,9,1) 50%, rgba(0,36,0,1) 100%);
   --gradient-2: linear-gradient(0deg, rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1));
+  --gradient-3: linear-gradient(0deg, rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1));
+  --gradient-4: linear-gradient(rgba(200,200,200,1), rgba(200,200,200,.1));
+
+  /**   -> IMGs <-   */
+
+  --bg-L: url('../img/lem-L.jpg');
+  --bg-R: url('../img/lem-R.jpg');
 }
 
 /*? ➞➞➞➞➞ Basic reset ➞➞➞➞➞ */
@@ -129,7 +140,7 @@ button:hover {
 └────────────────────────────────────────────────────┘
 */
 
-/**   -> grid-container <-   */
+/*? ➞➞➞➞➞ grid-container ➞➞➞➞➞ */
 
 .gc {
   width: 100%;
@@ -163,10 +174,12 @@ button:hover {
 .footer {
   position: relative;
   overflow: hidden;
+  background-position: center center;
+  background-size: cover;
   /* border: 1px solid var(--gray-1); */
 }
 
-/*? ➞➞➞➞➞ INT ➞➞➞➞➞ */
+/** <=<=[ int ]=>=> */
 
 .int {
   position: absolute;
@@ -174,6 +187,8 @@ button:hover {
   height: 50%;
   border: 1px solid var(--gray-5);
 }
+
+/*? d[-_-]b M1 */
 
 /*
 ┌────────────────────────────────────────────────────┐
@@ -183,12 +198,16 @@ button:hover {
 
 .header {
   background-image: var(--gradient-1);
-  border: 1px solid var(--c-3);
+  border-bottom: 5px solid var(--c-3);
+  border-top: 5px solid var(--c-3);
 }
+
+/** <=<=[ int ]=>=> */
 
 .header .int:nth-child(1) {
   left: 50%;
-  background-image: var(--gradient-1-inv);
+  /* background-image: var(--gradient-1-inv); */
+  background-color: var(--c-6);
   transform: translate(-50%, 0);
   width: 80%;
   border-radius: 0 0 3rem 3rem;
@@ -196,21 +215,31 @@ button:hover {
 }
 
 .header .int:nth-child(2) {
-  width: 10%;
-  background-image: var(--gradient-1-inv);
-  bottom: 0;
-  border-radius: 0 3rem 0 0;
+  left: 50%;
+  height: 35%;
+  background-image: var(--gradient-1);
+  transform: translate(-50%, 0);
+  width: 76%;
+  border-radius: 0 0 3rem 3rem;
+  outline: 1px solid var(--c-4);
 }
 
 .header .int:nth-child(3) {
   width: 10%;
+  background-color: var(--c-6);
+  bottom: 0;
+  border-radius: 0 3rem 0 0;
+}
+
+.header .int:nth-child(4) {
+  width: 10%;
   right: 0;
-  background-image: var(--gradient-1-inv);
+  background-color: var(--c-6);
   bottom: 0;
   border-radius:3rem 0 0 0;
 }
 
-.header .int:nth-child(4) {
+.header .int:nth-child(5) {
   width: 70%;
   height: 25%;
   background-image: var(--gradient-1-inv);
@@ -220,7 +249,7 @@ button:hover {
   border-radius: 2rem 2rem 0 0;
 }
 
-.header .int:nth-child(5) {
+.header .int:nth-child(6) {
   top: 50%;
   left: 50%;
   height: 100%;
@@ -229,7 +258,7 @@ button:hover {
   border-radius: 3rem;
 }
 
-.header .int:nth-child(6) {
+.header .int:nth-child(7) {
   width: 35%;
   top: 50%;
   left: 50%;
@@ -239,6 +268,40 @@ button:hover {
   border-radius: 3rem;
 }
 
+.header .int:nth-child(8) {
+  left: -5%;
+  width: 10%;
+  background-image: var(--gradient-1);
+  height: 35%;
+  border-radius: 0 0 2rem 0;
+}
+
+.header .int:nth-child(9) {
+  right: -5%;
+  width: 10%;
+  background-image: var(--gradient-1);
+  height: 35%;
+  border-radius: 0 0 0 2rem;
+}
+
+.header .int:nth-child(10) {
+  width: 9%;
+  height: 35%;
+  background-image: var(--gradient-1);
+  bottom: 0;
+  border-radius: 0 3rem 0 0;
+}
+
+.header .int:nth-child(11) {
+  width: 9%;
+  height: 35%;
+  background-image: var(--gradient-1);
+  right: 0;
+  bottom: 0;
+  border-radius: 3rem 0 0 0;
+}
+
+
 /*
 ┌────────────────────────────────────────────────────┐
 !                       Left                         │
@@ -246,9 +309,8 @@ button:hover {
 */
 
 .left {
-  background-image: var(--gradient-2);
+  background-image: var(--bg-L);
 }
-
 /*
 ┌────────────────────────────────────────────────────┐
 !                       c-1                          │
@@ -296,8 +358,10 @@ button:hover {
 */
 
 .right {
-  background-image: var(--gradient-2);
+  background-image: var(--bg-R);
 }
+
+/** <=<=[ int ]=>=> */
 
 /*
 ┌────────────────────────────────────────────────────┐
@@ -307,12 +371,15 @@ button:hover {
 
 .footer {
   background-image: var(--gradient-1-inv);
-  border: 1px solid var(--c-3);
+  border-top: 5px solid var(--c-3);
+  border-bottom: 5px solid var(--c-3);
 }
+
+/** <=<=[ int ]=>=> */
 
 .footer .int:nth-child(1) {
   left: 50%;
-  background-image: var(--gradient-1-inv);
+  background-color: var(--c-7);
   transform: translate(-50%, 0);
   width: 80%;
   border-radius: 3rem 3rem 0 0;
@@ -321,23 +388,34 @@ button:hover {
 }
 
 .footer .int:nth-child(2) {
-  width: 10%;
+  left: 50%;
   background-image: var(--gradient-1);
+  transform: translate(-50%, 0);
+  width: 76%;
+  height: 35%;
+  border-radius: 3rem 3rem 0 0;
+  outline: 1px solid var(--c-4);
+  bottom: 0;
+}
+
+.footer .int:nth-child(3) {
+  width: 10%;
+  background-color: var(--c-7);
   bottom: 0;
   border-radius: 0 0 3rem 0;
   top: 0;
 }
 
-.footer .int:nth-child(3) {
+.footer .int:nth-child(4) {
   width: 10%;
   right: 0;
-  background-image: var(--gradient-1);
+  background-color: var(--c-7);
   bottom: 0;
   border-radius:0 0 0 3rem;
   top: 0;
 }
 
-.footer .int:nth-child(4) {
+.footer .int:nth-child(5) {
   width: 70%;
   height: 25%;
   background-image: var(--gradient-1);
@@ -347,7 +425,7 @@ button:hover {
   border-radius: 0 0 2rem 2rem;
 }
 
-.footer .int:nth-child(5) {
+.footer .int:nth-child(6) {
   top: 50%;
   left: 50%;
   height: 100%;
@@ -356,7 +434,7 @@ button:hover {
   border-radius: 3rem;
 }
 
-.footer .int:nth-child(6) {
+.footer .int:nth-child(7) {
   width: 35%;
   top: 50%;
   left: 50%;
@@ -364,4 +442,41 @@ button:hover {
   transform: translate(-50%, -50%);
   background-image: var(--gradient-1-inv);
   border-radius: 3rem;
+}
+
+.footer .int:nth-child(8) {
+  left: -5%;
+  width: 10%;
+  background-image: var(--gradient-1-inv);
+  height: 35%;
+  border-radius: 0 2rem 0 0;
+  bottom: 0;
+}
+
+.footer .int:nth-child(9) {
+  right: -5%;
+  width: 10%;
+  background-image: var(--gradient-1-inv);
+  height: 35%;
+  border-radius: 2rem 0 0 0;
+  bottom: 0;
+}
+
+.footer .int:nth-child(10) {
+  width: 9%;
+  height: 35%;
+  background-image: var(--gradient-1-inv);
+  bottom: 0;
+  border-radius: 0 0 3rem 0;
+  top: 0;
+}
+
+.footer .int:nth-child(11) {
+  width: 9%;
+  height: 35%;
+  background-image: var(--gradient-1-inv);
+  right: 0;
+  bottom: 0;
+  border-radius: 0 0 0 3rem;
+  top: 0;
 }
