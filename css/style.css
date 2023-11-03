@@ -40,6 +40,7 @@
   --gradient-1-50: linear-gradient(0deg, rgba(0,36,0,.5) 0%, rgba(54,121,9,.5) 50%, rgba(219,255,0,.5) 100%);
   --gradient-1-inv: linear-gradient(0deg, rgba(219,255,0,1) 0%, rgba(54,121,9,1) 50%, rgba(0,36,0,1) 100%);
   --gradient-2: linear-gradient(0deg, rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1));
+  --gradient-2-50: linear-gradient(0deg, rgba(0,36,0,.5), rgba(54,121,9,.5), rgba(219,255,0,.5), rgba(54,121,9,.5), rgba(0,36,0,.5));
   --gradient-3: linear-gradient(0deg, rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1));
   --gradient-4: linear-gradient(rgba(200,200,200,1), rgba(200,200,200,.1));
 
@@ -186,6 +187,17 @@ button:hover {
   border: 1px solid var(--gray-5);
 }
 
+/*? ➞➞➞➞➞ Animation hue ➞➞➞➞➞ */
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 /*? d[-_-]b M1 */
 
 .menu1 {
@@ -237,6 +249,57 @@ button:hover {
   color: var(--c-3);
 }
 
+/*? d[-_-]b M2 */
+
+.menu2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 85%;
+  height: 50%;
+  background-image: var(--gradient-2-50);
+  padding: 0.5rem;
+  border-radius: 1.7rem;
+  border: 1px solid var(--c-3);
+}
+
+.menu2-cont {
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-1);
+  padding: 0.3rem;
+  border-radius: 1.5rem;
+}
+
+.menu2-links {
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-7);
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.3rem;
+}
+
+.menu2__link {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+  background-color: var(--c-1);
+  border-bottom: 1px solid var(--c-7);
+  transition: filter 500ms ease-in-out,
+  color 500ms ease-in-out;
+}
+
+.menu2__link:nth-child(1) {border-radius: 1rem 1rem 0 0;}
+.menu2__link:nth-child(5) {border-radius: 0 0 1rem 1rem;}
+
+.menu2__link:hover {
+  filter: brightness(2);
+  color: var(--c-3);
+}
+
 /*
 ┌────────────────────────────────────────────────────┐
 !                      Header                        │
@@ -275,6 +338,7 @@ button:hover {
   background-color: var(--c-6);
   bottom: 0;
   border-radius: 0 3rem 0 0;
+  border: 1px solid var(--c-3);
 }
 
 .header .int:nth-child(4) {
@@ -283,6 +347,7 @@ button:hover {
   background-color: var(--c-6);
   bottom: 0;
   border-radius:3rem 0 0 0;
+  border: 1px solid var(--c-3);
 }
 
 .header .int:nth-child(5) {
@@ -293,6 +358,7 @@ button:hover {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 2rem 2rem 0 0;
+  border: 1px solid var(--c-3);
 }
 
 .header .int:nth-child(6) {
@@ -302,6 +368,7 @@ button:hover {
   transform: translate(-50%, -50%);
   background-image: var(--gradient-1);
   border-radius: 3rem;
+  border: 1px solid var(--c-3);
 }
 
 .header .int:nth-child(7) {
@@ -310,8 +377,9 @@ button:hover {
   left: 50%;
   height:80%;
   transform: translate(-50%, -50%);
-  background-image: var(--gradient-1-inv);
+  background-color: var(--c-6);
   border-radius: 3rem;
+  border: 1px solid var(--c-3);
 }
 
 .header .int:nth-child(8) {
@@ -347,6 +415,71 @@ button:hover {
   border-radius: 3rem 0 0 0;
 }
 
+.header .int:nth-child(12) {
+  width: 33%;
+  top: 50%;
+  left: 50%;
+  height:80%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1-inv);
+  border-radius: 3rem;
+}
+
+.header .int:nth-child(13) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1);
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  top: 35%;
+}
+
+.header .int:nth-child(14) {
+  width: 25%;
+  height: 350%;
+  background-color: var(--c-6);
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  top: 65%;
+}
+
+.header .int:nth-child(15) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1-inv);
+  left: 15%;
+  border-radius: 50%;
+  bottom: 50%;
+}
+
+.header .int:nth-child(16) {
+  width: 26%;
+  height: 350%;
+  background-color: var(--c-6);
+  left: 17%;
+  border-radius: 50%;
+  bottom: 70%;
+}
+
+.header .int:nth-child(17) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1-inv);
+  right: 15%;
+  border-radius: 50%;
+  bottom: 50%;
+}
+
+.header .int:nth-child(18) {
+  width: 26%;
+  height: 350%;
+  background-color: var(--c-6);
+  right: 17%;
+  border-radius: 50%;
+  bottom: 70%;
+}
 
 /*
 ┌────────────────────────────────────────────────────┐
@@ -373,6 +506,22 @@ button:hover {
 }
 
 .left .menu1:nth-child(2):hover {right: 0;}
+
+/*? d[-_-]b M1 */
+
+.left .menu2:nth-child(3) {
+  top: -45%;
+  transition: top 500ms ease-in-out;
+}
+
+.left .menu2:nth-child(3):hover {top: 0;}
+
+.left .menu2:nth-child(4) {
+  bottom: -45%;
+  transition: bottom 500ms ease-in-out;
+}
+
+.left .menu2:nth-child(4):hover {bottom: 0;}
 
 /*
 ┌────────────────────────────────────────────────────┐
@@ -440,6 +589,22 @@ button:hover {
 
 .right .menu1:nth-child(2):hover {right: 0;}
 
+/*? d[-_-]b M2 */
+
+.right .menu2:nth-child(3) {
+  top: -45%;
+  transition: top 500ms ease-in-out;
+}
+
+.right .menu2:nth-child(3):hover {top: 0;}
+
+.right .menu2:nth-child(4) {
+  bottom: -45%;
+  transition: bottom 500ms ease-in-out;
+}
+
+.right .menu2:nth-child(4):hover {bottom: 0;}
+
 /*
 ┌────────────────────────────────────────────────────┐
 !                      Footer                        │
@@ -466,7 +631,7 @@ button:hover {
 
 .footer .int:nth-child(2) {
   left: 50%;
-  background-image: var(--gradient-1);
+  background-image: var(--gradient-1-inv);
   transform: translate(-50%, 0);
   width: 76%;
   height: 35%;
@@ -481,6 +646,7 @@ button:hover {
   bottom: 0;
   border-radius: 0 0 3rem 0;
   top: 0;
+  border: 1px solid var(--c-3);
 }
 
 .footer .int:nth-child(4) {
@@ -490,6 +656,7 @@ button:hover {
   bottom: 0;
   border-radius:0 0 0 3rem;
   top: 0;
+  border: 1px solid var(--c-3);
 }
 
 .footer .int:nth-child(5) {
@@ -500,6 +667,7 @@ button:hover {
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 0 0 2rem 2rem;
+  border: 1px solid var(--c-3);
 }
 
 .footer .int:nth-child(6) {
@@ -507,8 +675,9 @@ button:hover {
   left: 50%;
   height: 100%;
   transform: translate(-50%, -50%);
-  background-image: var(--gradient-1);
+  background-image: var(--gradient-1-inv);
   border-radius: 3rem;
+  border: 1px solid var(--c-3);
 }
 
 .footer .int:nth-child(7) {
@@ -517,7 +686,7 @@ button:hover {
   left: 50%;
   height:80%;
   transform: translate(-50%, -50%);
-  background-image: var(--gradient-1-inv);
+  background-color: var(--c-7);
   border-radius: 3rem;
 }
 
@@ -556,4 +725,70 @@ button:hover {
   bottom: 0;
   border-radius: 0 0 0 3rem;
   top: 0;
+}
+
+.footer .int:nth-child(12) {
+  width: 33%;
+  top: 50%;
+  left: 50%;
+  height:80%;
+  transform: translate(-50%, -50%);
+  background-image: var(--gradient-1);
+  border-radius: 3rem;
+}
+
+.footer .int:nth-child(13) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1-inv);
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  bottom: 35%;
+}
+
+.footer .int:nth-child(14) {
+  width: 25%;
+  height: 350%;
+  background-color: var(--c-7);
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  bottom: 65%;
+}
+
+.footer .int:nth-child(15) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1);
+  left: 15%;
+  border-radius: 50%;
+  top: 50%;
+}
+
+.footer .int:nth-child(16) {
+  width: 26%;
+  height: 350%;
+  background-color: var(--c-7);
+  left: 17%;
+  border-radius: 50%;
+  top: 70%;
+}
+
+.footer .int:nth-child(17) {
+  width: 30%;
+  height: 350%;
+  background-image: var(--gradient-1);
+  right: 15%;
+  border-radius: 50%;
+  top: 50%;
+}
+
+.footer .int:nth-child(18) {
+  width: 26%;
+  height: 350%;
+  background-color: var(--c-7);
+  right: 17%;
+  border-radius: 50%;
+  top: 70%;
 }
