@@ -39,6 +39,7 @@
   --gradient-1: linear-gradient(0deg, rgba(0,36,0,1) 0%, rgba(54,121,9,1) 50%, rgba(219,255,0,1) 100%);
   --gradient-1-50: linear-gradient(0deg, rgba(0,36,0,.5) 0%, rgba(54,121,9,.5) 50%, rgba(219,255,0,.5) 100%);
   --gradient-1-inv: linear-gradient(0deg, rgba(219,255,0,1) 0%, rgba(54,121,9,1) 50%, rgba(0,36,0,1) 100%);
+  --gradient-1-inv-50: linear-gradient(0deg, rgba(219,255,0,.5) 0%, rgba(54,121,9,.5) 50%, rgba(0,36,0,.5) 100%);
   --gradient-2: linear-gradient(0deg, rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1));
   --gradient-2-50: linear-gradient(0deg, rgba(0,36,0,.5), rgba(54,121,9,.5), rgba(219,255,0,.5), rgba(54,121,9,.5), rgba(0,36,0,.5));
   --gradient-3: linear-gradient(0deg, rgba(219,255,0,1), rgba(54,121,9,1), rgba(0,36,0,1), rgba(54,121,9,1), rgba(219,255,0,1));
@@ -191,7 +192,7 @@ button:hover {
   border: 1px solid var(--gray-5);
 }
 
-/*? ➞➞➞➞➞ Animation hue ➞➞➞➞➞ */
+/** <=<=[ Animation ]=>=> */
 
 @keyframes hue {
   0% {
@@ -202,7 +203,9 @@ button:hover {
   }
 }
 
-/*? d[-_-]b M1 */
+/*? ➞➞➞➞➞ Menus ➞➞➞➞➞ */
+
+/*? d[-_-]b M 1 */
 
 .menu1 {
   position: absolute;
@@ -236,13 +239,20 @@ button:hover {
 
 .menu1__link {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 3%;
   flex-grow: 1;
   border: 1px solid var(--c-2);
   background-color: var(--c-1);
   transition: filter 500ms ease-in-out,
   color 500ms ease-in-out;
+}
+
+.menu1__link > img {
+  display: inline-block;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .menu1__link:nth-child(1) {border-radius: 1rem 1rem 0 0;}
@@ -253,7 +263,7 @@ button:hover {
   color: var(--c-3);
 }
 
-/*? d[-_-]b M2 */
+/*? d[-_-]b M 2 */
 
 .menu2 {
   position: absolute;
@@ -304,7 +314,7 @@ button:hover {
   color: var(--c-3);
 }
 
-/*? d[-_-]b M3 */
+/*? d[-_-]b M 3 */
 
 .menu3 {
   position: absolute;
@@ -347,6 +357,92 @@ button:hover {
 .menu3__link:hover {
   animation: hue 3s linear normal;
 }
+
+/*? d[-_-]b M 4 */
+
+.menu4 {
+  position: absolute;
+  width: 40%;
+  background-image: var(--gradient-1-50);
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--c-3);
+}
+
+.menu4-cont {
+  width: 100%;
+  height: 100%;
+  padding: 0.3rem;
+  background-image: var(--gradient-1-inv-50);
+  border-radius: 1.3rem;
+}
+
+.menu4-links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image: var(--gradient-1-50);
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+.menu4__link {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  background-image: var(--gradient-1-50);
+  padding: 0.5rem 0 0 0.3rem;
+  border: 1px solid var(--c-3);
+  color: var(--c-3);
+  transition: background-color 500ms ease-in-out,
+  color 500ms ease-in-out;
+}
+
+.menu4__link:nth-child(1) {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.menu4__link:nth-child(5) {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.menu4__link:hover {
+  background-color: var(--c-3);
+  color: white;
+  animation: hue 3s linear normal;
+}
+
+.m41 {
+  top: -8%;
+  left: 8%;
+  transition: top 500ms ease-in-out;
+}
+
+.m41:hover {top: 0;}
+
+.m42 {
+  top: -8%;
+  right: 8%;
+  transition: top 500ms ease-in-out;
+}
+
+.m42:hover {top: 0;}
+
+.m43 {
+  bottom: -8%;
+  left: 8%;
+  transition: bottom 500ms ease-in-out;
+}
+
+.m43:hover {bottom: 0;}
+
+.m44 {
+  bottom: -8%;
+  right: 8%;
+  transition: bottom 500ms ease-in-out;
+}
+
+.m44:hover {bottom: 0;}
 
 /*
 ┌────────────────────────────────────────────────────┐
